@@ -1,2 +1,2 @@
-# CodingTest
-For CodingTest💻
+# Algorithm Study 😋
+Hello world
