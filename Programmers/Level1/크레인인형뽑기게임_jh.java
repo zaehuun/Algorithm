@@ -1,9 +1,10 @@
 import java.util.*;
-class Solution {
-    public int solution(int[][] board, int[] moves) {
-        Stack<Integer> stack = new Stack<>();
+class 크레인인형뽑기게임_jh {
+  public static void main(String[] args) {
+    int[][] board = {{0,0,0,0,0},{0,0,1,0,3},{0,2,5,0,1},{4,2,4,4,2},{3,5,1,3,1}};
+    int[] moves = {1,5,3,5,1,2,1,4};
         int answer = 0;
-        int row = board.length;        
+        int row = board.length;
         for(int m : moves){
             m = m - 1;
             for(int r = 0; r < row; r++){
@@ -23,6 +24,6 @@ class Solution {
                 }
             }
         }
-        return answer;
+        // return answer;
     }
 }

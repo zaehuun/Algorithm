@@ -1,6 +1,8 @@
 import java.util.*;
-class Solution {
-    public String[] solution(String[] record) {
+class 오픈채팅방_jh {
+    public static void main(String[] args) {
+    // public String[] solution(String[] record) {
+        String[] record = {};
         Map<String, String> map = new HashMap<>();
         List<List<String>> answer = new ArrayList<>();
         for(String message : record){
@@ -19,6 +21,6 @@ class Solution {
         for(int i = 0; i < answer.size(); i++){
             result[i] = map.get(answer.get(i).get(0))+answer.get(i).get(1);
         }
-        return result;
+        // return result;
     }
 }
