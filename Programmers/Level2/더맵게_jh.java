@@ -1,4 +1,4 @@
-/*
+
 import java.util.*;
 class Solution {
     public int solution(int[] scoville, int K) {
@@ -16,4 +16,3 @@ class Solution {
         return answer;
     }
 }
-*/

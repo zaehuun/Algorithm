@@ -1,4 +1,4 @@
-/*
+
 import java.util.*;
 class Solution {
     Map<Integer,List<Integer>> map = new HashMap<>();
@@ -18,20 +18,20 @@ class Solution {
             for(int t = 0; t < 4; t++){
                 int tx = x + dx[t];
                 int ty = y + dy[t];
-                
+
                 if(tx < 0 || tx >= m || ty < 0 || ty >= n) continue;
                 if(visited[tx][ty] || picture[tx][ty] != value) continue;
-                
+
                 visited[tx][ty] = true;
                 cnt++;
                 queue.offer(Arrays.asList(tx,ty));
-                
+
             }
         }
         if(map.containsKey(value)){
             List<Integer> li = map.get(value);
             int a = li.get(0); //영역
-            int b = li.get(1); 
+            int b = li.get(1);
             map.put(value,Arrays.asList(a+1, Math.max(cnt,b)));
         }
         else
@@ -39,8 +39,8 @@ class Solution {
     }
     public int[] solution(int m, int n, int[][] picture) {
         int[] answer = new int[2];
-        
-        
+
+
         for(int i = 0; i < m; i++)
             for(int j = 0; j < n; j++){
                 if(picture[i][j] == 0) continue;
@@ -55,4 +55,4 @@ class Solution {
         return answer;
     }
 }
-*/
+

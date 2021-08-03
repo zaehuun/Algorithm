@@ -1,9 +1,6 @@
 import java.util.*;
 class 키패드누르기_jh {
-    public static void main(String[] args) {
-      int[] numbers = {};
-      String hand = "";
-    // public String solution(int[] numbers, String hand) {
+    public String solution(int[] numbers, String hand) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         map.put(1, Arrays.asList(0,0));
         map.put(2, Arrays.asList(0,1));

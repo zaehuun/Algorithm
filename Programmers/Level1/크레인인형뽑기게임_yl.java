@@ -3,6 +3,7 @@ import java.util.Stack;
 53분 - Cheating : X
 스택 사용법 다시 익히는데 오래걸렸다.
 st.pop() => Object를 리턴한다.
+굳이 board를 stArr에 다 안넣고 그대로 사용하면서 이미 뽑은것만 0으로 바꿔줘도 될듯
   */
 public class 크레인인형뽑기게임_yl {
   public static void main(String[] args) {
