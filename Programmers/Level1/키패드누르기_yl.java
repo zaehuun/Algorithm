@@ -1,3 +1,6 @@
+/*
+30분 - Cheating : X
+  */
 class Solution {
   static class Pos{
       int y;
