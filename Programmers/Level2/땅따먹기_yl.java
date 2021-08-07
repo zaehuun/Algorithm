@@ -1,4 +1,8 @@
+/*
+30분 - Cheating : X
+*/
 class Solution {
+
   int solution(int[][] land) {
       int answer = 0;
 
