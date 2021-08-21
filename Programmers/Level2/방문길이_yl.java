@@ -15,7 +15,6 @@ class Solution {
 
     public int solution(String dirs) {
         int answer = 0;
-        boolean[][] map = new boolean[11][11];
         Pos p = new Pos (5, 5);
         ArrayList<String> al = new ArrayList<>();
 
