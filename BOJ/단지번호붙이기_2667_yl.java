@@ -6,7 +6,7 @@ import java.util.Collections;
 /*
 25분 - Cheating : X
 */
-public class 단지번호붙이기_2667_ly {
+public class 단지번호붙이기_2667_yl {
     static int[] dy = {-1, 1, 0, 0};
     static int[] dx = {0, 0, -1, 1};
     public static void main(String[] args) throws  IOException{
