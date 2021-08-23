@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+/*
+1시간 - Cheating : O
+*/
 public class 줄세우기_2252_yl {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,7 +22,7 @@ public class 줄세우기_2252_yl {
             al.add(new ArrayList<Integer>());
         }
 
-        int[] indegree = new int[n+1];
+        int[] indegree = new int[n+1]; // 해당 원소를 가리키는 원소의 개수
         for (int i=0; i<m; i++) {
             StringTokenizer st1 = new StringTokenizer(br.readLine());
             int student1 = Integer.parseInt(st1.nextToken());
@@ -37,7 +39,7 @@ public class 줄세우기_2252_yl {
                 q.add(i); // indegree[i] 아님 주의 !
             }
         }
-        
+
         ArrayList<Integer> ansAl = new ArrayList<>();
         while (!q.isEmpty()) {
             int cur = q.poll();
