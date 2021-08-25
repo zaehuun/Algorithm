@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /*
 20분 - Cheating : O (에라토스테네스의 체)
 */
-public class 소수의연속합_1644 {
+public class 소수의연속합_1644_yl {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
