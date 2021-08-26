@@ -67,9 +67,9 @@ public class Main {
 		System.out.println(result);
 	}
 }
-//여기부터 제대로 이해하고 푸는건데 졸려서 완성안했다 아직..
-//자바에는 없는 순열과 조합을 직접 구현하고 있는데 뭔가 생각보다 재밌다.
 
+//자바에는 없는 순열과 조합을 직접 구현하고 있는데 뭔가 생각보다 재밌다.
+//작성한 정답 코드
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -84,8 +84,6 @@ public class Main {
 			this.x = x;
 		}
 	}
-	static int[] dx = {-1,1,0,0};
-	static int[] dy = {0,0,1,-1};
 	static List<Pos> house = new ArrayList<>();
 	static List<Pos> chicken = new ArrayList<>();
 	static List<List<Pos>> comb = new ArrayList<>();
@@ -106,9 +104,7 @@ public class Main {
 				combination(i+1,M,pos);
 				pos.remove(pos.size()-1);
 			}
-
 		}
-
 	}
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -125,10 +121,25 @@ public class Main {
 			}
 		}
 		combination(0, M,new ArrayList<Pos>());
-		
-
+		int answer = 987654321;
+		for(List<Pos> p : comb){ //[[1,2,3],[4,5,6]]
+			int allDistance = 0;
+			for(int h = 0; h < house.size(); h++) {
+				int distance = 987654321;
+				for (int i = 0; i < p.size(); i++) { //[1,2,3]
+					int yDistance = Math.abs(house.get(h).y - p.get(i).y);
+					int xDistance = Math.abs(house.get(h).x - p.get(i).x);
+					distance = Math.min(distance, yDistance + xDistance);
+				}
+//				System.out.println(p.get(i).y + " " + p.get(i).x);
+				allDistance += distance;
+			}
+			answer = Math.min(answer, allDistance);
+		}
+		System.out.println(answer);
 
 	}
 }
+
 
 
