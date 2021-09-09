@@ -7,6 +7,7 @@
 //그냥 200000000을 사용해야겠다.
 //코테 볼 때 이런 문제는 어떻게 푸나하고 포기헀었는데 최근에 플로이드 와샬 알고리즘을 공부한 것이 좀 도움은 된 거 같다.
 //이진 탐색, 위상 정렬, 투포인터, 다잌스트라 공부가 더 필요한 거 같다..
+
 import java.util.*;
 class Solution {
     public int solution(int n, int s, int a, int b, int[][] fares) {
@@ -20,9 +21,6 @@ class Solution {
         int[][] arr = new int[n][n];
         for(int[] row : arr)
             Arrays.fill(row,200000000);
-        for(int i = 0; i < n; i++)
-            arr[i][i] = 0;
-        
         for(int[] fr : fares){
             int c = fr[0]-1;
             int d = fr[1]-1;
@@ -38,10 +36,12 @@ class Solution {
                 }
             }
         }
-        int answer = 200000000;
-        for(int i = 0; i < n; i++)
-            answer = Math.min(answer, arr[s][i] + arr[i][a] + arr[i][b]);
-        
+        int answer = arr[s][b] + arr[s][a];
+        for(int i = 0; i < n; i++){
+            int one = i == a ? 0 : arr[i][a];
+            int two = i == b ? 0 : arr[i][b];
+            answer = Math.min(answer, arr[s][i] + one + two);
+        }
         return answer;
     }
 }
