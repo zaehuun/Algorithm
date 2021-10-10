@@ -1,3 +1,6 @@
+//아 시x 풀고나서 다른 사람들 풀이를 보니 하나만 다른 거 찾기 로직이 엄청 간단했다..
+//길이가 같다는 조건을 알고 있는데도 그냥 순차 탐색 하면 안 될 거 같아서 시x
+
 import java.util.*;
 class Solution {
     public int answer = 200000000;
