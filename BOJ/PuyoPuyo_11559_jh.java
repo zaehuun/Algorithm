@@ -17,7 +17,6 @@ public class Main {
 			this.x = x;
 		}
 	}
-
 	public static void dfs(char target, int y, int x){
 		for(int i = 0; i < 4; i++){
 			int ty = y + dy[i];
