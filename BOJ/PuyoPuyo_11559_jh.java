@@ -34,9 +34,16 @@ public class Main {
 	}
 	public static void fillArray() {
 		for (int i = 0; i < 6; i++) {
-			for (int j = 10; j >= 0; j--) {
-				if(arr[j][i] != '.') continue;
-				
+			List<Character> tmp = new ArrayList<>();
+			for (int j = 11; j >= 0; j--) {
+				if(arr[j][i] == '.') continue;
+				tmp.add(arr[j][i]);
+				arr[j][i] = '.';
+			}
+			int idx = 11;
+			for(int j = 0; j < tmp.size(); j++){
+				arr[idx][i] = tmp.get(j);
+				idx--;
 			}
 		}
 	}
@@ -49,7 +56,6 @@ public class Main {
 			for(int j = 0; j < 6; j++)
 				arr[i][j] = st.charAt(j);
 		}
-
 		int answer = 0;
 		while(true){
 			boolean flag = true;
@@ -66,10 +72,9 @@ public class Main {
 					}
 				}
 			}
-			fillArray();
 			if(flag) break;
-			else answer++;
-
+			fillArray();
+			answer++;
 		}
 		System.out.println(answer);
 	}
