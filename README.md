@@ -77,6 +77,7 @@ G5 - [11559]🐌
   
 ## LeetCode
 ### Easy
-1. Two Sum🧚
-20. Valid Parentheses🧚
-53. Maximum Subarray🧚
+1 Two Sum🧚  
+20 Valid Parentheses🧚  
+53 Maximum Subarray🧚    
+70 Climbing Stairs🧚  
