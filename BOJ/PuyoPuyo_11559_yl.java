@@ -90,7 +90,7 @@ public class PuyoPuyo_11559_yl {
             int ny = y + dy[i];
             int nx = x + dx[i];
 
-            if (ny >= al.size() || ny < 0 || nx >= al.get(y).size() || nx < 0) {
+            if (ny >= al.size() || ny < 0 || nx >= al.get(ny).size() || nx < 0) {
                 continue;
             }
             if (visited[ny][nx] || al.get(ny).get(nx) != color) {
