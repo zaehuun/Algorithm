@@ -1,6 +1,4 @@
-package com.example.demo;
-
-import lombok.Builder;
+//아니 이분 그래프가 둘로 나눠지는 그래프라 생각했는데 그게 아니었다..
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,14 +30,15 @@ public class Main {
 			}
 
 			Queue<Integer> que = new LinkedList<>();
-			Set<Integer> set = new HashSet<>();
-			int[] visit = new int[v];
 
+			int[] visit = new int[v];
+			boolean flag = false;
 			for(int i = 0; i < v; i++) {
 				if (visit[i] != 0) continue;
-				visit[i] = i + 1;
+
+				visit[i] = 1;
 				que.offer(i);
-				set.add(i + 1);
+
 
 				while (!que.isEmpty()) {
 					int idx = que.poll();
@@ -47,15 +46,19 @@ public class Main {
 					for (int target : list[idx]) {
 						if (visit[target] == 0) {
 							que.offer(target);
-							visit[target] = i + 1;
+							visit[target] = visit[idx] * -1;
 
-						} else break;
-
+						} else if(visit[target] == visit[idx]) {
+							flag = true;
+							break;
+						}
 					}
+					if(flag) break;
 				}
+				if(flag) break;
 			}
-			if(set.size() == 2) System.out.println("YES");
-			else System.out.println("NO");
+			if(flag) System.out.println("NO");
+			else System.out.println("YES");
 			K--;
 		}
 
@@ -63,5 +66,3 @@ public class Main {
 
 	}
 }
-
-
