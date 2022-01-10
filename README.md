@@ -1,4 +1,7 @@
 # Algorithm Study 😋
+풀 문제 기록
+- 2573 빙산
+
 ## Programmers
 L1 - 크레인인형뽑기게임🧚🐌.  
 L1 - 키패드누르기🧚🐌  
