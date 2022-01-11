@@ -91,7 +91,7 @@ public class Main {
 			}
 			else{
 				if(flag){
-					System.out.println("엥");
+	                System.out.println(0);
 					return;
 				}
 				else{
