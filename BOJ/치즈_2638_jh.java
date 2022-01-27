@@ -1,5 +1,3 @@
-package com.example.demo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,7 +26,7 @@ public class Main{
 				int tx = n.x + dx[idx];
 
 				if(ty < 0 || tx < 0 || ty >= row || tx >= col) continue;
-				if(arr[ty][tx] != 0) continue;
+				if(arr[ty][tx] == 1) continue;
 				if(visit[ty][tx]) continue;
 
 				visit[ty][tx] = true;
@@ -39,9 +37,6 @@ public class Main{
 
 	}
 
-	public static void melting(int y, int x, int row, int col){
-
-	}
 	public static int[] dy = {-1,1,0,0};
 	public static int[] dx = {0,0,1,-1};
 	public static boolean[][] visit;
@@ -62,33 +57,41 @@ public class Main{
 				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-
-		bfs(0,0,n,m);
-
-
+		int answer = 0;
 
 		while(true){
 			boolean flag = false;
-			visit = new boolean[n][m];
+			for(int i = 0; i < n; i++){
+				for(int j = 0; j < m; j++){
+					visit[i][j] = false;
+				}
+			}
+//			visit = new boolean[n][m];
+			bfs(0,0,n,m);
+
+			List<Node> li = new ArrayList<>();
 			for(int i = 0; i < n; i++){
 				for(int j = 0; j < m; j++){
 					if(arr[i][j] == 1){
 						flag = true;
+						int count = 0;
+						for(int k = 0; k < 4; k++){
+							int ty = i + dy[k];
+							int tx = j + dx[k];
+							if(ty < 0 || tx < 0 || ty >= n || tx >= m) continue;
+
+							if(arr[ty][tx] == 2) count++;
+						}
+						if(count >= 2) li.add(new Node(i,j));
 					}
 				}
 			}
-
-
-
-
 			if(!flag) break;
-		}
-
-		for(int i = 0; i < n; i++){
-			for(int j = 0; j < m; j++){
-				System.out.print(arr[i][j] + " ");
+			for(Node no : li){
+				arr[no.y][no.x] = 0;
 			}
-			System.out.println();
+			answer++;
 		}
+		System.out.println(answer);
 	}
 }
