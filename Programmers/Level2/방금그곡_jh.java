@@ -1,6 +1,7 @@
 class Solution {
     public String solution(String m, String[] musicinfos) {
         String answer = "(None)";
+        int answerTime = Integer.MIN_VALUE;
         m = m.replace("C#", "c");
         m = m.replace("D#", "d");
         m = m.replace("F#", "f");
@@ -52,7 +53,12 @@ class Solution {
             System.out.println(sb.toString());
             
             if(sb.toString().contains(m)){
-                System.out.println(song);
+                if(answer.equals("(None)")) {answer = song; answerTime = total;}
+                else{
+                    if(total > answerTime){
+                        answer = song; answerTime = total;
+                    }
+                }
             }
                 
         }
